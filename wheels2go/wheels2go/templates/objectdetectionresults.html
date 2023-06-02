@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object Detection Result</title>
+  </head>
+  <body>
+    <h1>Object Detection Result</h1>
+    <div>
+      <img id="detection-image" src="{{ image_url }}" />
+    </div>
+    <script>
+      // Refresh the image every 5 seconds
+      setInterval(function() {
+        var img = document.getElementById("detection-image");
+        img.src = "{{ image_url }}?t=" + new Date().getTime();
+      }, 5000);
+    </script>
+  </body>
+</html>

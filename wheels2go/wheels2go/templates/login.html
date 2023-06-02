@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css">
+    
+
+</head>
+<body>
+    <div class="navbar">
+           {% load static %}
+            <img src="{% static 'media/LO.png' %}" class="logo">
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../about/">about</a></li>
+            <li><a href="../login/">login</a></li>
+            <li><a href="../register/">register</a></li>
+    
+        </ul>
+    </div>
+    <div class="loginbox">
+           {% load static %}
+        <img src="{% static 'media/download.png' %}" class="download">
+        <h1>LOGIN HERE</h1>
+        <form action="/userchk" method="POST">
+            {% csrf_token %}
+            <p>USERNAME</p>
+            <input type="text" name="username" placeholder="enter username">
+            <p>PASSWORD</p>
+            <input type="password" name="password" placeholder="enter password">
+            <input type="submit" name="" value="login">
+            <a href="register.html">Don't have an Account?</a>
+            <p>{{data}}</p>
+        </form>
+    </div>
+</body>
+</html>

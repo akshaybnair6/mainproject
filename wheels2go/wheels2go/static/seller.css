@@ -1,0 +1,55 @@
+body {
+    background-color: #FFF8DC; /* Pale goldenrod */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  h1 {
+    color: #FFA500; /* Orange */
+    text-align: center;
+  }
+  
+  form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFEFD5; /* Papaya whip */
+    border: 2px solid #FFA500; /* Orange */
+    border-radius: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #FF8C00; /* Dark orange */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #FFFACD; /* Lemon chiffon */
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #FFA500; /* Orange */
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF; /* White */
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #FF8C00; /* Dark orange */
+  }
+  

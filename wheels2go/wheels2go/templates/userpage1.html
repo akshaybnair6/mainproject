@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}User Page{% endblock %}
+
+{% block content %}
+
+<h1>Welcome {{ request.user.username }}!</h1>
+
+{% if request.user.isseller %}
+    <p>You are a seller.</p>
+{% else %}
+    <p>You are not a seller.</p>
+{% endif %}
+
+{% endblock %}

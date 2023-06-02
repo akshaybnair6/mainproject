@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER DETAILS</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/userdetailscss.css' %}" type="text/css">
+
+
+</head>
+<div class="h">
+    USER DETAILS
+</div>
+
+        <table class=results>
+            <thread>
+            <tr>
+              <th>USERNAME</th>
+              <th>LOCATION</th>
+              <th>EMAIL</th>
+              <th>PHONE NUMBER</th>
+              <th>ACTIONS</th>
+            </tr>
+            </thread>
+          </tbody>
+                {% for al in data %}
+            
+            <tr>
+              
+              <td>{{al.username}}</td>
+              <td>{{al.location}}</td>
+              <td>{{al.email}}</td>
+              <td>{{al.phonenumber}}</td>
+              <!-- <td><a href="http://127.0.0.1:8000/delete?id={{al.id}}">Delete</a></td> -->
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    
+
+
+
+
+</html>

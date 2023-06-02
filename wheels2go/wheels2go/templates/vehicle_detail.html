@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<div class="prd-det">
+    <!-- sub img sec -->
+    {% for vehicle in vehicles %}
+    <div class="sec-1">
+    
+        <img src="{{ vehicle.image1.url }}" width="50" height="50" alt="{{ vehicle.brand }} {{ vehicle.model }}">
+        <img src="{{ vehicle.image2.url }}" width="50" height="50" alt="{{ vehicle.brand }} {{ vehicle.model }}">
+        <img src="{{ vehicle.image3.url }}" width="50" height="50" alt="{{ vehicle.brand }} {{ vehicle.model }}">
+    </div>
+
+    <!-- main img sec-->
+    <div class="sec-2">
+        <img src="{{ vehicle.image.url }}" width="50" height="50" alt="{{ vehicle.brand }} {{ vehicle.model }}">
+    </div>
+
+    <!-- desginer/product details -->
+    <div class="sec-3">
+
+        <div class="desig-det">
+            <!-- <img src="imges/skel.jpg" alt=""> -->
+            <h2></h2>
+            <h2>{{ vehicle.brand }} {{ vehicle.model }}</h2>
+        </div>
+
+        <div>
+            <!-- prd det -->
+            <h3>Product Details</h3>
+            <p>Year: {{ vehicle.year }}</p>
+  <p>Mileage: {{ vehicle.mileage }}</p>
+  
+  <p>Description: {{ vehicle.description }}</p>
+            <!-- size chart -->
+            <!-- <div class="size-chart">
+                <p>select size : </p>
+                <label for=""><input type="radio" name="" id=""> S</label>
+                <label for=""><input type="radio" name="" id=""> M</label>
+                <label for=""><input type="radio" name="" id=""> L</label>
+                <label for=""><input type="radio" name="" id=""> XL</label>
+            </div> -->
+
+            <!-- price -->
+            <br>
+            <h3 id="pr"><p>Price: {{ vehicle.price }}</p> </h3>
+
+        </div>
+
+        <div class="btns">
+            <form action="../checkout/" method="POST">
+                {% csrf_token %}
+            <button class="buy-btn">Buy Now</button>
+            </form>
+            <!-- <button class="cart-btn">Add to Cart</button> -->
+           
+                
+            <a title="add to whishlist" class="whish-btn" href="http://127.0.0.1:8000/wishlist_view/?vehicleid={{vehicle.id}}"><i class="fa fa-heart fa-lg"></i></a>
+           
+        </div>
+    </div>
+</div>
+
+
+{% endfor %}
+
+
+
+
+
+
+{% endblock %}

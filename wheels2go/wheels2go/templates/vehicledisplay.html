@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEHICLE DETAILS</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/vehicledetailscss.css' %}" type="text/css">
+
+
+</head>
+<div class="h">
+    VEHICLE DETAILS
+</div>
+
+        <table class=results>
+            <thread>
+            <tr>
+              <th>BRAND</th>
+              <th>MODEL</th>
+              <th>YEAR</th>
+              <th>MILEAGE</th>
+              <th>PRICE</th>
+              <th>IMAGE</th>
+              <th>DESCRIPTION</th>
+              <th>IS SOLD</th>
+              <th>ACTIONS</th>
+            </tr>
+            </thread>
+          </tbody>
+                {% for al in data %}
+            
+            <tr>
+              
+                <td>{{al.brand}}</td>
+                <td>{{al.model}}</td>
+                <td>{{al.year}}</td>
+                <td>{{al.mileage}}</td>
+                <td>{{al.price}}</td>
+                <td><img src="../uploads/{{al.image}} " width="50" height="50"></td>
+                <td>{{al.description}}</td>
+                <td>{{al.is_sold}}</td>
+              <!-- <td><a href="http://127.0.0.1:8000/delete?id={{al.id}}">Delete</a></td> -->
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    
+
+
+
+
+</html>

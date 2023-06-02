@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if data %}
+  <h1>Your Wishlisted Vehicles</h1>
+  <ul>
+    <div class="card-container">
+    {% for Favourites in data %}
+    <a href="{% url 'vehicle_detail' %}">
+      <div class="card">
+          <!-- <img src="{{ Favourites.image.url }}" width="50" height="50" alt="{{ Favourites.brand }} {{ Favourites.model }}">
+          <img src="{{ Favourites.image1.url }}" width="50" height="50" alt="{{ vehicle.brand }} {{ vehicle.model }}">
+          <img src="{{ vehicle.image2.url }}" width="50" height="50" alt="{{ vehicle.brand }} {{ vehicle.model }}">
+          <img src="{{ vehicle.image3.url }}" width="50" height="50" alt="{{ vehicle.brand }} {{ vehicle.model }}">
+          <h3>{{ Favourites.brand }} {{ Favourites.model }}</h3>
+          <p>Year: {{ Favourites.year }}</p>
+          <p>Mileage: {{ Favourites.mileage }}</p>
+          <p>Price: {{ Favourites.price }}</p>
+          <p>Description: {{ Favourites.description }}</p> -->
+          <p>Vehicle id:{{Favourites.vehicleid}}</p>
+      </div>
+      </a>
+    {% endfor %}
+    </div>
+  </ul>
+{% else %}
+  <h1>You have no wishlisted vehicles yet.</h1>
+{% endif %}
+
+{% endblock %}

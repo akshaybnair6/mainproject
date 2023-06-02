@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION FORM</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}" type="text/css">
+</head>
+<body>
+    <div class="navbar">
+       {% load static %}
+        <img src="{% static 'media/LO.png' %}" class="logo">
+    <ul>
+        <li><a href="../">Home</a></li>
+        <li><a href="../about/">about</a></li>
+        <li><a href="../login/">login</a></li>
+        <li><a href="../register/">register</a></li>
+
+    </ul>
+</div>
+
+
+    <div class="main">
+    <div class="register">
+        <h2>REGISTER HERE</h2>
+        <form action="../savedata/" method="POST">
+            {% csrf_token %}
+        <label>user name :</label><br>
+       <input type="text" name="uname" id="name" placeholder="Enter your user name" required>
+            
+        <br><br>
+        <label>password :</label><br>
+       <input type="password" name="pass" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters':''); if(this.checkValidity()) form.pass2.pattern = this.value;" id="pass1" placeholder="Enter your password"  required>
+            
+        <br><br>
+        <label>confirm password :</label><br>
+       <input type="password" name="passw" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same password as above':'');" id="pass2" placeholder="confirm your password" required>
+            
+        <br><br>
+        <label>email :</label><br>
+       <input type="email" name="email" id="email" placeholder="enter your email" required>
+            
+        <br><br>
+        <label>location :</label><br>
+        <input type="text" name="location" id="locate" placeholder="enter your location" required>
+            
+        <br><br>
+        <label>phone number :</label><br>
+        <input type="text" name="phnumber" pattern="[6789][0-9]{9}" id="number" placeholder="enter your phone number" required>
+            
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="submit" id="submit" value="submit">
+    </form>
+    </div>
+    </div>
+
+
+</body>
+</html>
+

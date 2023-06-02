@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Object Detection</h1>
+    <div id="search-bar">
+        <form action="#" method="get">
+            <input type="text" name="search" placeholder="Search for objects...">
+            <button type="submit">Search</button>
+        </form>
+        <div id="processed-frames">
+            {% for frame in processed_frames %}
+                <img src="{{ frame }}" alt="Processed Frame">
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
